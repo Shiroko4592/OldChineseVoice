@@ -7,21 +7,21 @@ export default function TranslationHistoryExample() {
       koreanText: "안녕하세요",
       chineseText: "安寧乎汝",
       romanization: "ʔaːn neːŋ ɡaː njaʔ",
-      createdAt: new Date(Date.now() - 1000 * 60 * 5),
+      createdAt: new Date(Date.now() - 1000 * 60 * 5).toISOString(),
     },
     {
       id: "2",
       koreanText: "감사합니다",
       chineseText: "感謝",
       romanization: "kaːm sjaːʔ",
-      createdAt: new Date(Date.now() - 1000 * 60 * 15),
+      createdAt: new Date(Date.now() - 1000 * 60 * 15).toISOString(),
     },
     {
       id: "3",
       koreanText: "좋은 하루 되세요",
       chineseText: "好日",
       romanization: "huːʔ nit",
-      createdAt: new Date(Date.now() - 1000 * 60 * 60),
+      createdAt: new Date(Date.now() - 1000 * 60 * 60).toISOString(),
     },
   ];
 

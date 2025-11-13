@@ -4,14 +4,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Trash2, Clock } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
 import { ko } from "date-fns/locale";
-
-interface Translation {
-  id: string;
-  koreanText: string;
-  chineseText: string;
-  romanization: string;
-  createdAt: Date;
-}
+import { type Translation } from "@shared/schema";
 
 interface TranslationHistoryProps {
   translations: Translation[];
@@ -76,7 +69,7 @@ export default function TranslationHistory({
                     {translation.chineseText}
                   </p>
                   <p className="text-xs text-muted-foreground">
-                    {formatDistanceToNow(translation.createdAt, {
+                    {formatDistanceToNow(new Date(translation.createdAt), {
                       addSuffix: true,
                       locale: ko,
                     })}

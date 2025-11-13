@@ -28,7 +28,17 @@ export const translations = pgTable("translations", {
 export const insertTranslationSchema = createInsertSchema(translations).omit({
   id: true,
   createdAt: true,
+}).extend({
+  koreanText: z.string().trim().min(1, "Korean text is required"),
+  chineseText: z.string().trim().min(1, "Chinese text is required"),
+  romanization: z.string().trim().min(1, "Romanization is required"),
 });
 
 export type InsertTranslation = z.infer<typeof insertTranslationSchema>;
-export type Translation = typeof translations.$inferSelect;
+export type Translation = {
+  id: string;
+  koreanText: string;
+  chineseText: string;
+  romanization: string;
+  createdAt: string;
+};
